@@ -11,24 +11,23 @@ Allow users to lend assets based on the credit score retrieved from Spectral Fin
 5. The smart contract transfers the funds to the borrower
 6. The borrower can repay the loan at any time
 
-### This is what we got
 
-```mermaid
-    
-```
+`Contract: 0xe43f9b1480b6fafba3217a8578e797283ece9704`
+
+### This is what we aspired to do
 
 ```mermaid
 sequenceDiagram
     autonumber
 
     #participant Web App
-    #participant Smart contract
+    #participant Smart Contract
     #participant Borrower
     #participant Lender
     #participant Spectral Finance oracle
 
-    Worker ->> Web App: Request a loan
-    Web App ->> P2P Lending Smart contract
+    Worker ->> Web App
+    Web App ->> Smart Contract
     Smart Contract -->> Spectral Finance oracle: getCreditScore()
     
     Spectral Finance oracle -->> Smart Contract: creditScore
@@ -37,3 +36,22 @@ sequenceDiagram
 
     lender -->> Smart Contract: loanId
 ```
+
+# add image
+
+Peer to Peer Lending Contract v0.1 deployed on Base
+[![Alt text](p2p.png)](https://goerli.basescan.org/address/0xe43f9b1480b6fafba3217a8578e797283ece9704)
+
+
+[![Alt text](basescan.png)](https://goerli.basescan.org/address/0xe43f9b1480b6fafba3217a8578e797283ece9704)
+
+
+## How to run
+
+foundry tools
+
+## Contract and Transaction on Base
+
+Add contract screenshot
+
+Add transaction screenshot
