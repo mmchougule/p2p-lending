@@ -25,16 +25,18 @@ sequenceDiagram
     #participant Borrower
     #participant Lender
     #participant Spectral Finance oracle
+    
 
-    Worker ->> Web App
-    Web App ->> Smart Contract
+    Borrower ->> Web App: Need to borrow
+    Web App ->> Smart Contract: requestLoan()
     Smart Contract -->> Spectral Finance oracle: getCreditScore()
     
-    Spectral Finance oracle -->> Smart Contract: creditScore
+    Spectral Finance oracle -->> Smart Contract: check creditScore
 
-    Smart Contract -->> lender -->> creates loan on Base
+    Smart Contract -->> creates loan on Base: create loan
 
     lender -->> Smart Contract: loanId
+    Smart Contract -->> Borrower: loanId
 ```
 
 # add image
